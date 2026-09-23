@@ -9,8 +9,6 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  // State untuk menentukan apakah tombol Lanjut boleh digunakan
-  bool _setujuSyarat = false;
 
   @override
   Widget build(BuildContext context) {
