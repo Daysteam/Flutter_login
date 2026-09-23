@@ -36,8 +36,29 @@ class Beranda extends StatelessWidget {
                   _menuItem(
                     context,
                     icon: Icons.engineering,
-                    title: "Data Konsentrasi",
+                    title: "Data KK",
                     route: "/datakk",
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _menuItem(
+                    context,
+                    icon: Icons.local_post_office,
+                    title: "Data PKL"
+                  ),
+                  _menuItem(
+                    context,
+                    icon: Icons.people_alt,
+                    title: "Data Guru",
+                  ),
+                  _menuItem(
+                    context,
+                    icon: Icons.contacts_outlined,
+                    title: "Data Guru",
                   ),
                 ],
               ),
@@ -59,12 +80,14 @@ class Beranda extends StatelessWidget {
     BuildContext context, {
     required IconData icon,
     required String title,
-    required String route,
+    String? route,
   }) {
     return InkWell(
       borderRadius: BorderRadius.circular(15),
       onTap: () {
-        Navigator.pushNamed(context, route);
+        if (route != null) {
+          Navigator.pushNamed(context, route);
+        }
       },
       child: SizedBox(
         width: 95,
